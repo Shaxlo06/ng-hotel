@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Shaxlo06",
+      "password": "936897632",
+      "mobile": 936897632
+    }
+  ],
+  "datas": [
+    {
+      "id": 1,
+      "hotelName": "HILLTOn",
+      "description": "HILLton",
+      "region": "Tashkent",
+      "district": "Mirzo Ulug'bek",
+      "star": 3,
+      "numberOfRooms": 888,
+      "discategoriestrict": "top"
+    },
+    {
+      "id": 2,
+      "hotelName": "Success 9.0",
+      "description": "November",
+      "region": "Tashkent",
+      "district": "Mirzo Ulug'bek",
+      "star": 5,
+      "numberOfRooms": 999
+    },
+    {
+      "id": 3,
+      "hotelName": "Avenue",
+      "description": "Hill",
+      "region": "Tashkent",
+      "district": "Yunusobod",
+      "star": 4,
+      "numberOfRooms": 555
+    }
+  ]
+}

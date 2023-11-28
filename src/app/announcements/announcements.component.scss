@@ -1,0 +1,31 @@
+.rating {
+    i {
+        color: #6C757D;
+    }
+    
+    .active {
+        color: yellow;
+    }
+}
+
+.card-left {
+    position: relative;
+    width: 150px; 
+    height: 120px;
+}
+
+.marked {
+    position: absolute;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 4px 8px;
+    left: 0;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+// .updateModal .modal-content {
+//     width: 770px;
+// }

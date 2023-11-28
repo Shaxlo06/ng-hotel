@@ -1,0 +1,59 @@
+<div class="container container-sm">
+    <div class="card m-auto">
+        <div class="card-header text-center">
+            <h4 class="mt-3">Your profile details</h4>
+            <p>Here you can change your profile information</p>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="editForm" *ngFor="let u of signUser">
+                <div class="form-group d-flex justify-content-between align-items-center mt-3 mb-3 border-bottom">
+                    <i class="fa fa-user"></i>
+                    <div class="p">
+                        <div *ngIf="u.isEdit">
+                            <input type="text" [(ngModel)]="u.fullName"  formControlName="fullName"class="form-control mb-2">
+                            <div *ngIf="editForm.get('fullName')?.invalid && editForm.get('fullName')?.touched || editForm.get('fullName')?.dirty" id="emailHelp" class="form-text mb-2">
+                                <span *ngIf="editForm.get('fullName')?.errors" class="text-danger">*This field must not be empty</span>
+                            </div>
+                        </div>
+                        <p *ngIf="!u.isEdit">
+                            {{u.fullName}}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-between align-items-center mb-3 border-bottom">
+                    <i class="fa fa-phone"></i>
+                    <div class="p">
+                        <div *ngIf="u.isEdit">
+                            <input type="number" [(ngModel)]="u.mobile"  formControlName="mobile" class="form-control mb-2">
+                            <div *ngIf="editForm.get('mobile')?.invalid && editForm.get('mobile')?.touched || editForm.get('mobile')?.dirty" id="emailHelp" class="form-text mb-2">
+                                <span *ngIf="editForm.get('mobile')?.errors" class="text-danger">* Mobile must contain only numbers</span>
+                            </div>
+                        </div>
+                        <p *ngIf="!u.isEdit">
+                            {{u.mobile}}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-between align-items-center mb-3 border-bottom">
+                    <i class="fa fa-lock"></i>
+                    <div class="p">
+                        <div *ngIf="u.isEdit">
+                            <input type="text" [(ngModel)]="u.password"  formControlName="password" class="form-control mb-3">
+                            <div *ngIf="editForm.get('password')?.invalid && editForm.get('password')?.touched || editForm.get('password')?.dirty" id="emailHelp" class="form-text mb-2">
+                                <span *ngIf="editForm.get('password')?.errors" class="text-danger">* Must be at least 8 characters entered</span>
+                            </div>
+                        </div>
+                        <p *ngIf="!u.isEdit">
+                            {{u.password}}
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-warning" *ngIf="!changes" [disabled]="noChange" (click)="onEdit(u)"  type="button">Edit</button>
+                    <button type="submit" class="btn btn-success" [disabled]="!editForm.dirty || loading" *ngIf="changes" (click)="saveChanges()" type="button"><i *ngIf="loading" class="fa fa-spinner fa-spin"></i> Save changes</button>
+                    <button class="btn btn-secondary" *ngIf="cancelShow && changes" (click)="cancelEdit(u)">Cancel</button>
+                </div>             
+            </form>
+        </div>
+    </div>
+</div>

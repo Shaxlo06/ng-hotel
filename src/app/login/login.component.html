@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mt-2 pl-4">LOGIN</h5>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="form-group mb-4">
+                    <i class="fa fa-user"></i>
+                    <input formControlName="fullName" type="text" class="form-control border border border-top-0 border border-start-0 border border-end-0"  aria-describedby="emailHelp" placeholder="Enter fullname">
+                    <div *ngIf="loginForm.get('fullName')?.invalid && loginForm.get('fullName')?.touched || loginForm.get('fullName')?.dirty" id="emailHelp" class="form-text">
+                        <span *ngIf="loginForm.get('fullName')?.errors" class="text-danger">* Not an alternate name</span>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <i class="fa fa-lock"></i>
+                    <input formControlName="password" [type]="show_button ? 'text' : 'password'" class="form-control border border border-top-0 border border-start-0 border border-end-0" placeholder="Password">
+                    <i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()"></i>
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched || loginForm.get('password')?.dirty" id="emailHelp" class="form-text">
+                        <span *ngIf="loginForm.get('password')?.errors" class="text-danger">* Must be at least 8 characters entered</span>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary w-100">Submit</button>
+                <p class="mt-3 text-center">New user ?  Click to <a routerLink="/registration"> Register</a></p>
+            </form>
+        </div>
+    </div>
+</div>

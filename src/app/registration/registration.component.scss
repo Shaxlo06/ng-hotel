@@ -1,0 +1,26 @@
+.card {
+    max-width: 550px;
+    width: 100%;
+    margin: 110px auto; 
+    
+    .form-group {
+        position: relative; 
+
+        input {
+            padding-left: 33px;
+            outline: none;
+            box-shadow:none !important;
+        }
+        
+        i {
+            position: absolute;
+            top: 10px;
+            left: 8px;
+            font-size: 16px;
+        }
+
+        .fa-eye-slash, .fa-eye {
+            margin-left: 92%;
+        }
+    }
+}
